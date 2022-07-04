@@ -12,20 +12,21 @@ class DogsController < ApplicationController
     render json: dog
     else
       render json: dog.errors, status:422
-  end
-end
+       end
+    def update
+   end
+    
+   def destroy
+   end
 
   # Handle strong parameters, so we are secure
   private
   def dog_params
     params.require(:dog).permit(:name, :age, :enjoys, :image)
+  
+    end
   end
+    
   
 
-  def update
-  end
-
-  def destroy
-  end
-
-end
+  
