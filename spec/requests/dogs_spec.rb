@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Dogs", type: :request do
-
   describe "GET /index" do
      it"gets a list of dogs" do
       Dog.create(
@@ -10,19 +9,16 @@ RSpec.describe "Dogs", type: :request do
         enjoys: 'Chasing balls, and plenty of sunshine.',
         image: 'https://thisdogdoesnotexist.com/'
       )
-      
-      
-     get '/dogs'
-            dog = JSON.parse(response.body)
-           expect(response).to have_http_status(200)
-            expect(sassie.length).to eq 1
-            end
-          end
-      
-        
+  
+      get '/dogs'
 
-
-describe "POST/create"do
+      dog = JSON.parse(response.body)
+      expect(response).to have_http_status(200)
+      expect(sassie.length).to eq 1
+    end
+  end
+  
+  describe "POST/create"do
   it"creates a dog" do
     dog_params = {
         dog: {
@@ -79,7 +75,7 @@ end
     end
 it "doesn't create a dog without an image" do
   dog_params = {
-       dog: {
+      dog: {
       name:"Remi",
       age: 2,
       enjoys:'Chasing balls, and plenty of sunshine'

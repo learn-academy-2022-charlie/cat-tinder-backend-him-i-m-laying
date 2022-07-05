@@ -1,8 +1,8 @@
 class DogsController < ApplicationController
 
   def index
-      dogs = Dog.all
-      render json: dogs
+    dogs = Dog.all
+    render json: dogs
   end
 
   def create
@@ -12,21 +12,18 @@ class DogsController < ApplicationController
     render json: dog
     else
       render json: dog.errors, status:422
-       end
-    def update
-   end
+    end
+  end
+  
+  def update
+  end
     
-   def destroy
-   end
+  def destroy
+  end
 
   # Handle strong parameters, so we are secure
   private
   def dog_params
     params.require(:dog).permit(:name, :age, :enjoys, :image)
-  
-    end
   end
-    
-  
-
-  
+end
