@@ -27,12 +27,12 @@ dogs = [
   }, 
 ]
 
-dogs.each do |each_dog|
-  Dog.create each_dog
-  puts "creating dog #{each_dog}"
+dogs.each do |attributes|
+  Dog.create attributes
+  # puts "creating dog #{each_dog}"
 end
 
 p Dog.all
-p "there should be 5 Dog's Seeds"
+p "there should be 3 Dog's Seeds"
 
 #https://unsplash.com/photos/urs_y9NwFcc
